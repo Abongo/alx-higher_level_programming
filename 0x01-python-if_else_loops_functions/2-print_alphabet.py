@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-print("abcdefghijklmnopqrstuvwxyz")
+for L in range(97, 123):
+    print("{}".format(chr(L)), end="")
