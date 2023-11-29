@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-numbers = []
-
-for i in range(0, 100):
-    numbers.append('{:02d}'.format(i))
-
-print(', '.join(numbers))
+for number in range(0, 100):
+    if number < 99:
+        print("{:02d}, ".format(number), end='')
+    else:
+        print("{:02d}".format(number))
