@@ -2,8 +2,8 @@
 def uppercase(str):
     result = ""
     for char in str:
-        if char.islower():
-            result += char.upper()
+        if 'a' <= char <= 'z':
+            result += chr(ord(char) - ord('a') + ord('A'))
         else:
             result += char
     print("{1}".format(str, result))
