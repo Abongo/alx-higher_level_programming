@@ -2,11 +2,15 @@
 """Check type"""
 
 class Square:
-"""Private instance attribute: size
-    Instantiation with optional """
+    """
+    class Square definition
+
+    Args:
+        size (int): size of a side in square
+    """
 
     def __init__(self, size=0):
-    """Initializes attribute size """
+        """Initializes attribute size """
 
         self.__size = 0
         self.size = size
