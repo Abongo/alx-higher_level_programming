@@ -6,70 +6,64 @@ class Node:
     """Node class"""
 
     def __init__(self, data, next_node=None):
+        """Defines a node of LL"""
         self.data = data
         self.next_node = next_node
 
     @property
     def data(self):
+        """data Getter"""
         return self.__data
 
     @data.setter
     def data(self, value):
+        """data Setter"""
         if not isinstance(value, int):
-            raise TypeError("data must be an integer")
+            raise TypeError('data must be an integer')
         self.__data = value
 
     @property
     def next_node(self):
+        """next_node Getter"""
         return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
-        if value is not None and not isinstance(value, Node):
-            raise TypeError("next_node must be a Node object")
+        """next_node Setter"""
+        if value is not None and type(value) != Node:
+            raise TypeError('next_node must be a Node object')
         self.__next_node = value
 
 
 class SinglyLinkedList:
+    """Singley Linked List class"""
+
     def __init__(self):
         self.head = None
 
+    def __str__(self):
+        result = ""
+        node = self.head
+        while node:
+            result += str(node.data) + '\n'
+            node = node.next_node
+        return result[:-1]
+
     def sorted_insert(self, value):
         new_node = Node(value)
-        if self.head is None or self.head.data >= value:
+
+        if not self.head:
+            self.head = new_node
+            return
+
+        if value < self.head.data:
             new_node.next_node = self.head
             self.head = new_node
             return
 
-        current = self.head
-        while current.next_node is not None and current.next_node.data < value:
-            current = current.next_node
-
-        new_node.next_node = current.next_node
-        current.next_node = new_node
-
-    def __str__(self):
-        result = ""
-        current = self.head
-        while current:
-            result += str(current.data) + "\n"
-            current = current.next_node
-        return result.rstrip()
-
-
-if __name__ == "__main__":
-    SinglyLinkedList = __import__('100-singly_linked_list').SinglyLinkedList
-
-    sll = SinglyLinkedList()
-    sll.sorted_insert(2)
-    sll.sorted_insert(5)
-    sll.sorted_insert(3)
-    sll.sorted_insert(10)
-    sll.sorted_insert(1)
-    sll.sorted_insert(-4)
-    sll.sorted_insert(-3)
-    sll.sorted_insert(4)
-    sll.sorted_insert(5)
-    sll.sorted_insert(12)
-    sll.sorted_insert(3)
-    print(sll)
+        node = self.head
+        while node.next_node and node.next_node.data < value:
+            node = node.next_node
+        if node.next_node:
+            new_node.next_node = node.next_node
+        node.next_node = new_node
