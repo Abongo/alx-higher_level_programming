@@ -1,4 +1,11 @@
+#!/usr/bin/python3
+"""Coordinates of a square"""
+
+
 class Square:
+    """Private instance attribute: size
+    Instantiation with area and position method """
+
     def __init__(self, size=0, position=(0, 0)):
         self.size = size
         self.position = position
@@ -69,4 +76,3 @@ if __name__ == "__main__":
 
     my_square = Square(5, (4, 1))
     print(my_square)
-)

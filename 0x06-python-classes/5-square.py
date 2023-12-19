@@ -1,4 +1,11 @@
+#!/usr/bin/python3
+""" Printing a square"""
+
+
 class Square:
+    """Private instance attribute: size
+    Instantiation with area method prints squares """
+
     def __init__(self, size=0):
         self.size = size
 

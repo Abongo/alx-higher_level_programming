@@ -1,4 +1,11 @@
+#!/usr/bin/python3
+"""Coordinates of a square"""
+
+
 class Square:
+    """Private instance attribute: size
+    Instantiation with area and position method """
+
     def __init__(self, size=0):
         self.size = size
 
@@ -54,4 +61,3 @@ if __name__ == "__main__":
         print("Square 5 > Square 6")
     if s_5 >= s_6:
         print("Square 5 >= Square 6")
-
