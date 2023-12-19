@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+""" Class form python bytecode for magic objects"""
+
+
 import math
 
 class MagicClass:
