@@ -6,20 +6,20 @@ if __name__ == "__main__":
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
 
-    a = int(argv[1])
-    operator = argv[2]
-    b = int(argv[3])
+        a = int(argv[1])
+        operator = argv[2]
+        b = int(argv[3])
 
-    if operator == '+':
-        result = a + b
-    elif operator == '-':
-        result = a - b
-    elif operator == '*':
-        result = a * b
-    elif operator == '/':
-        result = a / b
-    else:
-        print("Unknown operator. Available operators: +, -, * and /")
-        exit(1)
+        if operator == '+':
+            result = a + b
+        elif operator == '-':
+            result = a - b
+        elif operator == '*':
+            result = a * b
+        elif operator == '/':
+            result = a / b
+        else:
+            print("Unknown operator. Available operators: +, -, * and /")
+            exit(1)
 
-    print("{:d} {:s} {:d} = {:d}".format(a, operator, b, result))
+            print("{:d} {:s} {:d} = {:d}".format(a, operator, b, result))
