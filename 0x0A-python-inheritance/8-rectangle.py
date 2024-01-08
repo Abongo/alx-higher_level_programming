@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Rectangle class Module"""
 
+
 class BaseGeometry:
     """Base Geometry class."""
 
