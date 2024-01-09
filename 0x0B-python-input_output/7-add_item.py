@@ -2,19 +2,15 @@
 """ save items to a file."""
 
 import sys
+import os.path
 
+args = sys.argv[1:]
 
-save_file = __import__('7-save_to_json_file').save_to_json_file
-load_file = __import__('8-load_from_json_file').load_from_json_file
-my_list = []
-try:
-    tmp_list = load_file("add_item.json")
-    my_list = tmp_list
-except Exception as e:
-    pass
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-length = len(sys.argv)
-for i in range(1, length):
-    my_list.append(sys.argv[i])
+item = []
+if os.path.exists("./add_item.json"):
+    item = load_from_json_file("add_item.json")
 
-my_list = save_file(my_list, "add_item.json")
+save_to_json_file(item + args, "add_item.json")
