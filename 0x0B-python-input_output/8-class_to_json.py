@@ -1,8 +1,14 @@
 #!/usr/bin/python3
-import json
+"""
+file: 10-class_to_json.py
+functions:
+-> class_to_json
+"""
 
+def class_to_json(obj):
+    """ retuns the dictionary description with simple data structure """
 
-def load_from_json_file(filename):
-    ''' that creates an Object from a “JSON file” '''
-    with open(filename, mode='r') as f:
-        return json.load(f)
+    structure = {}
+    if hasattr(obj, "__dict__"):
+        structure = obj.__dict__.copy()
+    return structure
