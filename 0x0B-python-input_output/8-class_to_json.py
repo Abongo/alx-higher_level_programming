@@ -5,6 +5,7 @@ functions:
 -> class_to_json
 """
 
+
 def class_to_json(obj):
     """ retuns the dictionary description with simple data structure """
 
