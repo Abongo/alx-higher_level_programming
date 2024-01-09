@@ -19,8 +19,8 @@ class Student:
             'age': self.age
         }
 
-if __name__ == "__main__":
-    Student = __import__('9-student').Student
+    if __name__ == "__main__":
+        Student = __import__('9-student').Student
 
     students = [Student("John", "Doe", 23), Student("Bob", "Dylan", 27)]
 
