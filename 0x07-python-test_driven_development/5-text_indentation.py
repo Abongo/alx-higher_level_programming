@@ -10,19 +10,13 @@ def text_indentation(text):
     TypeError: If text is not a string.
     """
 
+
     if not isinstance(text, str):
-        raise TypeError("text must be a string")
-
-    end_of_line_chars = ['.', '?', ':']
-    current_line = ""
-
-    for char in text:
-        current_line += char
-
-        if char in end_of_line_chars:
-            print(current_line.strip())
-            print()
-            current_line = ""
-
-    if current_line:
-        print(current_line.strip())
+        raise TypeError('text must be a string')
+    punc = text.replace('.', '.\n\n')
+    punc = punc.replace('?', '?\n\n')
+    punc = punc.replace(':', ':\n\n')
+    newLine = punc.split('\n')
+    for line in range(len(newLine)):
+        print("{}".format(newLine[line].strip()),
+              end=("" if (line == (len(newLine) - 1)) else '\n'))
